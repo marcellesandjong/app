@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>NFL Team Schedules</h1>
+<ul>
+  {% for team in teams %}
+    <li><a href="{{ url_for('team_schedule', team_name=team) }}">{{ team }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}{{ team_name }} Schedule{% endblock %}
+{% block content %}
+<h1>{{ team_name }} Schedule</h1>
+{% if schedule %}
+  <ul>
+    {% for game in schedule %}
+      <li>{{ game['Date'] }} - {{ game['Opponent'] }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Schedule not available.</p>
+{% endif %}
+{% endblock %}
